@@ -164,7 +164,7 @@ main span {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  height: auto;
   padding-top: 50px;
 }
 
@@ -181,7 +181,7 @@ main span {
   flex-wrap: wrap;
   width: 100%;
   max-width: 2190px;
-  height: auto;
+  height: 100%;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -208,6 +208,7 @@ main span {
   overflow: hidden;
 }
 
+/* Annan stil på card */
 /* .card::before {
   content: "";
   position: absolute;
