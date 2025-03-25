@@ -59,6 +59,8 @@ async function getData() {
 }
 
 //Tog cirka 12 timmar, om jag kan skriva denna logik snygare uppskattas feedback!
+//UPDATE 03-25... I lektionen den 25'de fick jag svar på min kommentar över! med innerHTML kan man sätta hela html på en gång vilket hade gjort detta block av kod några timmar kortare och sparat min huvudvärk haha! Men innerHTML som jag förstått är inte lika bra pga XSS.
+
 function createElements(users) {
   const cardContainer = document.querySelector(".cards-container");
 
@@ -67,6 +69,7 @@ function createElements(users) {
     card.classList.add("card");
     cardContainer.appendChild(card);
 
+    //För att skapa 3 divar som ska ha enskild data inomsig.
     for (let i = 0; i < 3; i++) {
       lineDiv = document.createElement("div");
       lineDiv.className = "line";
@@ -104,6 +107,7 @@ function createElements(users) {
     moreInfoDiv.id = "more-info-container";
     card.appendChild(moreInfoDiv);
 
+    //Samma här...
     for (let i = 0; i < 3; i++) {
       lineDiv = document.createElement("div");
       lineDiv.className = "line";
