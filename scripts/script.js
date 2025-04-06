@@ -1,4 +1,4 @@
-getAdvice();
+// getAdvice();
 getData();
 // ........................................................................
 // Button click & animation logik .........................................
@@ -6,13 +6,13 @@ const rndBtn = document.querySelector("#random-button");
 const dice = document.querySelector("#dice-img");
 
 dice.addEventListener("click", () => {
-  adviceText.style.opacity = "0";
-  setTimeout(() => {
-    getAdvice();
-    setTimeout(() => {
-      adviceText.style.opacity = "1";
-    }, 200);
-  }, 200);
+  // adviceText.style.opacity = "0";
+  // setTimeout(() => {
+  //   getAdvice();
+  //   setTimeout(() => {
+  //     adviceText.style.opacity = "1";
+  //   }, 200);
+  // }, 200);
   spinDice();
 });
 
@@ -23,33 +23,6 @@ function spinDice() {
   }, 600);
 }
 // ........................................................................
-// GAMMAL logik för att placera data per html card som fanns i html, se HTML kommentar .................................................................
-
-// async function getData() {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//   const data = await response.json();
-//   users = data;
-//   const cards = document.querySelectorAll(".card");
-
-//   cards.forEach((card, index) => {
-//     if (users[index]) {
-//       const nameText = card.querySelector(".name-span");
-//       const usernameText = card.querySelector(".username-span");
-//       const emailText = card.querySelector(".email-span");
-//       const cityText = card.querySelector(".city-span");
-//       const phoneText = card.querySelector(".phone-span");
-//       const companyText = card.querySelector(".company-span");
-
-//       nameText.textContent = users[index].name;
-//       usernameText.textContent = users[index].username;
-//       emailText.textContent = users[index].email;
-//       cityText.textContent = users[index].address.city;
-//       phoneText.textContent = users[index].phone;
-//       companyText.textContent = users[index].company.name;
-//     }
-//   });
-// }
-
 // Fetch & Skapa element logik .............................................
 async function getData() {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -58,7 +31,7 @@ async function getData() {
   createElements(users);
 }
 
-//Tog cirka 12 timmar, om jag kan skriva denna logik snygare uppskattas feedback!
+//Om jag kan skriva denna logik snygare uppskattas feedback!
 //UPDATE 03-25... I lektionen den 25'de fick jag svar på min kommentar över! med innerHTML kan man sätta hela html på en gång vilket hade gjort detta block av kod några timmar kortare och sparat min huvudvärk haha! Men innerHTML som jag förstått är inte lika bra pga XSS.
 
 function createElements(users) {
@@ -187,13 +160,15 @@ window.addEventListener("scroll", () => {
 });
 // ........................................................................
 // Random advice fetch ....................................................
-const adviceText = document.querySelector("#advice-span");
-async function getAdvice() {
-  fetch("https://api.adviceslip.com/advice")
-    .then((response) => response.json())
-    .then((data) => {
-      const advice = data.slip.advice;
-      adviceText.textContent = advice;
-    });
-}
+
+//API slutade fungera nyligen??
+// const adviceText = document.querySelector("#advice-span");
+// async function getAdvice() {
+//   fetch("https://api.adviceslip.com/advice")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const advice = data.slip.advice;
+//       adviceText.textContent = advice;
+//     });
+// }
 // ........................................................................

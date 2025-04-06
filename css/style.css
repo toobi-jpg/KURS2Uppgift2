@@ -371,3 +371,29 @@ main span {
   padding-top: 50px;
   border-top: 1px solid greenyellow;
 }
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  max-height: 80px;
+  width: 100%;
+  background-color: var(--backgroundColor);
+  filter: brightness(80%);
+  color: white;
+}
+
+.footer-content-right {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 10px;
+  bottom: 10px;
+}
+
+.footer-content-right p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
